@@ -34,14 +34,4 @@ urlpatterns = [
     # # You can see the authentication URL patterns included at
     # # https://github.com/django/django/blob/stable/2.0.x/django/contrib/auth/urls.py.
     # path('', include('django.contrib.auth.urls')),
-
-    path('users/', views.user_list, name='user_list'),
-    # Убедитесь, что этот шаблон(path('users/follow/', views.user_follow, name='user_follow'),)
-    # будет находиться перед шаблоном user_detail.
-    # В противном случае запрос по адресу /users/follow/ подойдет к регулярному
-    # отображению шаблона user_detail, при этом будет вызван не тот обработчик,
-    # который мы ожидаем. Помните, что Django проверяет каждый URL-шаблон по
-    # порядку, пока не найдет первый подходящий
-    path('users/follow/', views.user_follow, name='user_follow'),
-    path('users/<username>/', views.user_detail, name='user_detail'),
 ]
